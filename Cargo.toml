@@ -1,0 +1,12 @@
+[package]
+name = "native-histogram"
+version = "0.1.0"
+edition = "2024"
+
+[dev-dependencies]
+divan = "0.1"
+fastrand = "2"
+
+[[bench]]
+name = "bucketing"
+harness = false
