@@ -200,9 +200,8 @@ mod tests {
 	#[test]
     fn search_strategies() {
         use crate::search::*;
-        for schema in 0..=8 {
+        for bounds in NATIVE_HISTOGRAM_BOUNDS {
             for &value in &*TEST_VALUES {
-                let bounds = NATIVE_HISTOGRAM_BOUNDS[schema];
                 let index = Binary::search(bounds, value);
                 assert_eq!(Linear::search(bounds, value), index);
                 assert_eq!(Hybrid::search(bounds, value), index);
